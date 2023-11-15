@@ -1,5 +1,6 @@
 package com.devsuperior.dslist.controllers;
 
+import com.devsuperior.dslist.dto.GameMinDto;
 import com.devsuperior.dslist.entities.Game;
 import com.devsuperior.dslist.service.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +17,9 @@ public class GameController {
     @Autowired // injeção do service
     private GameService gameService;
     @GetMapping// metodo get do HTTP
-    public List<Game> findAll(){
-       var result =  gameService.findAll();
-       return result;
+    public List<GameMinDto> findAll(){
+       return gameService.findAll();
+
     }
 
 
